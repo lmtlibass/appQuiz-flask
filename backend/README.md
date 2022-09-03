@@ -102,3 +102,60 @@ createdb trivia_test
 psql trivia_test < trivia.psql
 python test_flaskr.py
 ```
+
+# URL DE BASE
+- http://127.0.0.1:5000/
+
+# TRAITEMENT DES ERREURS
+- Les erreurs sont retourne au format json de la manière suivante
+```
+    {
+            'success': False,
+            'error': 404,
+            'message': 'Not found'
+        }
+```
+- L'API return les types d'érreurs suivantes
+
+```
+        {
+            'success': False,
+            'error': 404,
+            'message': 'Not found'
+        }
+        {
+            'success': False,
+            'error': 422,
+            'message': 'Unprocessable'
+        }
+        {
+            'success': False,
+            'error': 400,
+            'message': 'Bad request'
+        }
+```
+
+# POINTS DE TERMINAISON (endpoint)
+
+### GET/categories
+   Pour récupèrer toutes les catégories disponibles.
+### GET/questions
+    Pour récupérer les questions, y compris la pagination .le nombre total de questions, catégorie actuelle, catégories.
+### DELETE//questions/<int:question_id>
+    Pour la suppression d'une question en utilisant sont ID
+### POST/questions
+    Pour l'ajout d'une nouvelle question
+### POST/search
+    pour obtenir des questions basées sur un terme de recherche.
+    Il renvoi toutes les questions pour lesquelles le terme de recherche
+    est une sous-chaîne de la question.
+### GET/categories/<int:category_id>/questions'
+    Pour récuperer les questions en fonction de leurs catégories
+### POST/quizzes
+    pour obtenir des questions pour jouer au quiz.
+
+
+
+ 
+
+    
